@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".RegisterActivity">
+    <ImageView
+        android:id="@+id/imgNielit"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/nielit" />
+
+    <EditText
+        android:id="@+id/usernameRA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/username"
+        android:drawableRight="@drawable/ic_user"
+
+        android:inputType="textEmailAddress|text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/passwordRA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/password"
+        android:drawableRight="@drawable/ic_key"
+
+        android:inputType="textPassword"
+        android:minHeight="48dp" />
+    <EditText
+        android:id="@+id/cnfPasswordRA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/confirm_password"
+
+
+        android:inputType="textVisiblePassword"
+        android:minHeight="48dp" />
+
+
+    <Button
+        android:id="@+id/btn_signupRA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:drawableRight="@drawable/ic_registration"
+        android:text="@string/register"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>
