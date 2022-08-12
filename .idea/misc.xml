@@ -5,9 +5,17 @@
       <map>
         <entry key="..\:/Android/quizic/app/src/main/res/drawable/ic_forgot.xml" value="0.1" />
         <entry key="..\:/Android/quizic/app/src/main/res/drawable/ic_key.xml" value="0.1" />
+        <entry key="..\:/Android/quizic/app/src/main/res/drawable/next_btn.xml" value="0.1" />
+        <entry key="..\:/Android/quizic/app/src/main/res/font/comic_sans_ms.xml" value="0.17962962962962964" />
         <entry key="..\:/Android/quizic/app/src/main/res/layout/activity_login.xml" value="0.13333333333333333" />
-        <entry key="..\:/Android/quizic/app/src/main/res/layout/activity_main.xml" value="0.165625" />
+        <entry key="..\:/Android/quizic/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Android/quizic/app/src/main/res/layout/activity_question_load.xml" value="0.19895833333333332" />
+        <entry key="..\:/Android/quizic/app/src/main/res/layout/activity_quiz_genre.xml" value="0.1796875" />
         <entry key="..\:/Android/quizic/app/src/main/res/layout/activity_register.xml" value="0.14666666666666667" />
+        <entry key="..\:/Android/quizic/app/src/main/res/layout/genre_item.xml" value="0.19895833333333332" />
+        <entry key="..\:/Android/quizic/app/src/main/res/layout/nav_header.xml" value="0.1796875" />
+        <entry key="..\:/Android/quizic/app/src/main/res/layout/question_dashboard.xml" value="0.2" />
+        <entry key="..\:/Android/quizic/app/src/main/res/menu/navigation_menu.xml" value="0.1796875" />
       </map>
     </option>
   </component>

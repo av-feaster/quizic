@@ -27,6 +27,27 @@
         android:minHeight="48dp" />
 
     <EditText
+        android:id="@+id/nameRA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Enter Your Name"
+        android:drawableRight="@drawable/ic_user"
+
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp" />
+    <EditText
+        android:id="@+id/ageRA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/age"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <EditText
         android:id="@+id/passwordRA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,8 +65,6 @@
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
         android:hint="@string/confirm_password"
-
-
         android:inputType="textVisiblePassword"
         android:minHeight="48dp" />
 
