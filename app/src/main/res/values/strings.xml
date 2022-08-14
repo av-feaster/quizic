@@ -26,6 +26,17 @@
     <string name="api_quiz">s</string>
     <string name="question">Question\'</string>
     <string name="next">Next</string>
+    <string name="questionA">A</string>
+    <string name="optA">A</string>
+    <string name="optB">B</string>
+    <string name="optC">C</string>
+    <string name="optD">D</string>
+    <string name="optE">E</string>
+    <string name="optF">F</string>
+    <string name="game_over">Game Over!</string>
+    <string name="you_played_for_genre">You played for Genre:</string>
+    <string name="genre">Genre</string>
+    <string name="choose_a_genre">CHOOSE A GENRE</string>
 
     <string-array name="genre">
         <item name="Linux" />

@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -109,6 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
                 userMap.put("email",email);
                 userMap.put("age",userAge);
                 userMap.put("password",password);
+                userMap.put("score",0);
 
 
                 mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -117,9 +119,8 @@ public class RegisterActivity extends AppCompatActivity {
                         if(task.isSuccessful())
                         {
                             Log.i(TAG, String.valueOf(userMap.size()));
-                            mDatabase.child("users").push().setValue(userMap);
+                              mDatabase.child("users").child(Objects.requireNonNull(mAuth.getUid())).setValue(userMap);
                             Toast.makeText(RegisterActivity.this,"You are successfully Registered", Toast.LENGTH_SHORT).show();
-
                             finish();
                         }
                         else

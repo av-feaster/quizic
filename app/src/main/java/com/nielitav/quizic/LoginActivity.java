@@ -2,6 +2,7 @@ package com.nielitav.quizic;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.widget.Button;
@@ -92,11 +93,48 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-//
-//    public void OnReset(View view){
-//
-//
-//
-//    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        String s1 = sh.getString("user_name", "");
+        String s2 = sh.getString("pass_word", "");
+//        int p=sh.getString("place","");
+        // Setting the fetched data
+        // in the EditTexts
+        user_name.setText(s1);
+        pass_word.setText(s2);
+    }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+
+        // Creating a shared pref object
+        // with a file name "MySharedPref"
+        // in private mode
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+        // write all the data entered by the user in SharedPreference and apply
+        myEdit.putString("user_name", user_name.getText().toString());
+        myEdit.putString("pass_word", pass_word.getText().toString());
+        myEdit.apply();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        String s1 = sh.getString("user_name", "");
+        String s2 = sh.getString("pass_word", "");
+//        int p=sh.getString("place","");
+        // Setting the fetched data
+        // in the EditTexts
+        user_name.setText(s1);
+        pass_word.setText(s2);
+    }
 }

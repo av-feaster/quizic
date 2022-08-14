@@ -2,8 +2,6 @@ package com.nielitav.quizic;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-
 //{
 //        "id": 716,
 //        "question": "An abstraction in kubernetes which defines a logical set of pods and a policy to access them.",
@@ -174,7 +172,7 @@ public class Questions {
 
 
     }
-    public class CorrectAnswer{
+    public class CorrectAnswers {
         @SerializedName("answer_a_correct")
         String ansAC;
         @SerializedName("answer_b_correct")
@@ -238,6 +236,6 @@ public class Questions {
     }
 
    Answers answers;
-    CorrectAnswer correctAnswer;
+    CorrectAnswers correct_answers;
 
 }

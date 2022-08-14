@@ -12,51 +12,90 @@
     tools:openDrawer="start"
     tools:context=".MainActivity">
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navMenuMA"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/navigation_menu" />
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/userNameMA"
+            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LETS PLAY!"
+            android:textSize="16sp"
+
+            android:fontFamily="@font/comic_sans_ms"
+
+            />
 
 
         <LinearLayout
+
             android:id="@+id/llMA"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_margin="20dp"
+            android:gravity="start"
+            android:layout_marginTop="20dp"
+            android:layout_margin="10dp"
             >
-            <TextView
-                android:id="@+id/userNameMA"
-                android:layout_margin="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="LETS PLAY"
+            <ImageView
+                android:id="@+id/ivMainActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/quizic"
+                android:contentDescription="novice,veteran,expert"/>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:gravity="center"
+               android:layout_marginTop="10dp"
+               android:layout_gravity="center">
+               <TextView
+                   android:id="@+id/TotalScoretext"
+                   android:text="Total Score:"
+                   android:textStyle="bold"
+                   android:textSize="18sp"
+                   android:padding="4dp"
+                   android:fontFamily="@font/comic_sans_ms"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+               <TextView
+                   android:id="@+id/TotalScoreMA"
+                   android:text="0"
+                   android:textStyle="bold"
+                   android:textSize="18sp"
+                   android:padding="4dp"
+                   android:fontFamily="@font/comic_sans_ms"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
 
-                android:fontFamily="@font/comic_sans_ms"
-
-                />
-
+           </LinearLayout>
 
             <Button
                 android:id="@+id/btn_takeQuizMA"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/bteal"
                 android:text="Take Quiz"
 
                 />
 
             <Button
                 android:id="@+id/btn_History"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/bteal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="History"
@@ -65,5 +104,5 @@
         </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

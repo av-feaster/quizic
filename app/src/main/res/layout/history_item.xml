@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp">
+    <RelativeLayout
+        android:id="@+id/relHI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivHistoryItem"
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/quizic"
+            />
+        <TextView
+            android:id="@+id/tvGenreHI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ivHistoryItem"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            android:text="GENRE:"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/tvScoreHI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivHistoryItem"
+            android:layout_below="@+id/tvGenreHI"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            android:text="SCORE:"
+            android:textStyle="bold"
+
+            />
+        <TextView
+           android:id="@+id/dateHI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivHistoryItem"
+            android:layout_below="@+id/tvScoreHI"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            android:text="DATE:"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/tvDateHI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/dateHI"
+            android:layout_below="@+id/tvScoreHI"
+            android:paddingTop="8dp"
+            android:textSize="14.5sp"
+            android:text="00 00 00 00:00:00"
+            android:textStyle="bold"
+            />
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
