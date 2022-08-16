@@ -1,6 +1,5 @@
 package com.nielitav.quizic;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,22 +9,26 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.core.view.View;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText user_name,pass_word;
-    FirebaseAuth mAuth;
+    FirebaseAuth mAuth,auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
+        auth = FirebaseAuth.getInstance();
+
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
+        setContentView(R.layout.activity_login);
 
         user_name=findViewById((R.id.et_userNameLA));
         pass_word=findViewById(R.id.et_passwordLA);

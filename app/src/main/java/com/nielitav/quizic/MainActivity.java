@@ -10,12 +10,10 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
@@ -59,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         totalScore=findViewById(R.id.TotalScoreMA);
         userName=findViewById(R.id.userNameMA);
 
-        navView=findViewById(R.id.navMenuMA);
 
         ivLevel=findViewById(R.id.ivMainActivity);
         databaseReference=firebaseDatabase.getInstance().getReference();
@@ -67,9 +64,7 @@ public class MainActivity extends AppCompatActivity {
         nameRef=userRef.child("name");
         scoreRef=userRef.child("score");
 
-//        actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.nav_open,R.string.nav_close);
-//        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-//        actionBarDrawerToggle.syncState();
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -120,84 +115,47 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         nav=(NavigationView)findViewById(R.id.navMenuMA);
-        drawerLayout=(DrawerLayout)findViewById(R.id.drawerLayMA);
+        actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.nav_open,R.string.nav_close);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
 
-        toggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.nav_open,R.string.nav_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
 
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
-            {
-                switch (menuItem.getItemId())
-                {
-                    case R.id.nav_account:
-                        Toast.makeText(getApplicationContext(),"Accnt",Toast.LENGTH_LONG).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Log.i(TAG, "onNavigationItemSelected: "+item.toString());
+                if(item.getItemId()==R.id.nav_logout){
+                    mAuth.signOut();
+                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                    Log.e(TAG, "onNavigationItemSelected: "+item.getItemId() );
 
-                    case R.id.nav_settings:
-                        Toast.makeText(getApplicationContext(),"Settings",Toast.LENGTH_LONG).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
 
-                    case R.id.nav_logout:
-                        Toast.makeText(getApplicationContext(),"logout",Toast.LENGTH_LONG).show();
-                        mAuth.signOut();
-                        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
                 }
-
                 return true;
             }
-        });
+
+
+    });
 
 
 
 
     }
+//
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(actionBarDrawerToggle.onOptionsItemSelected(item)) {
+
+            return true;
+        }
+        Log.e(TAG,"NavMenu"+item.getItemId());
+
+        return super.onOptionsItemSelected(item);
+    }
 
 
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//
-//        if(actionBarDrawerToggle.onOptionsItemSelected(item)) {
-//            switch(item.getItemId()){
-//                case R.id.nav_account:
-//                    Toast.makeText(MainActivity.this, "Account not avaialable", Toast.LENGTH_SHORT).show();
-//                    break;
-//
-//                case R.id.nav_logout:
-//                    Toast.makeText(MainActivity.this, "Logging Out..", Toast.LENGTH_SHORT).show();
-//                    mAuth.signOut();
-//                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
-//                    break;
-//                case R.id.nav_settings:
-//                    Toast.makeText(MainActivity.this, "Not Available!", Toast.LENGTH_SHORT).show();
-//                    break;
-//            }
-//            return true;
-//            }
-//        switch(item.getItemId()){
-//            case R.id.nav_account:
-//                Toast.makeText(MainActivity.this, "Account not avaialable", Toast.LENGTH_SHORT).show();
-//                break;
-//
-//            case R.id.nav_logout:
-//                Toast.makeText(MainActivity.this, "Logging Out..", Toast.LENGTH_SHORT).show();
-//                mAuth.signOut();
-//                startActivity(new Intent(MainActivity.this,LoginActivity.class));
-//                break;
-//            case R.id.nav_settings:
-//                Toast.makeText(MainActivity.this, "Not Available!", Toast.LENGTH_SHORT).show();
-//                break;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
     public void  setImageView(){
         if(vscore<=10){
             ivLevel.setImageResource(R.drawable.duck);
